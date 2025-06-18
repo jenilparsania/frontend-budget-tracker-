@@ -35,9 +35,10 @@ const Signup = () => {
     // Password validation
     if (!formData.password) {
       newErrors.password = 'Password is required';
-    } else if (formData.password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters long';
-    }
+    } 
+    // else if (formData.password.length < 6) {
+    //   newErrors.password = 'Password must be at least 6 characters long';
+    // }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -159,7 +160,7 @@ const Signup = () => {
         </form>
 
         <div className="signup-footer">
-          <p>Already have an account? <a href="/login">Sign in</a></p>
+          <p>Already have an account? <a href="/signin">Sign in</a></p>
         </div>
       </div>
     </div>
@@ -167,3 +168,8 @@ const Signup = () => {
 };
 
 export default Signup;
+
+
+
+
+
