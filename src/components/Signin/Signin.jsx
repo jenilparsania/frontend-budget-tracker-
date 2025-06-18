@@ -57,7 +57,7 @@ const Signin = () => {
         setServerError('');
 
         try{
-            const response = await signup(formData);
+            const response = await signin(formData);
             console.log('Signin successful:' , response);
 
             // Store any necessary data ( like token) in localStorage or state management
@@ -66,7 +66,7 @@ const Signin = () => {
                 localStorage.setItem('token',response.token);
             }
 
-            navigate('/login');
+            navigate('/dashboard');
             
         }catch (error){
             console.error('Signin error : ',error);
@@ -125,10 +125,12 @@ const Signin = () => {
                 </form>
 
                 <div className='signin-footer'>
-                    <p>New to the Budget Tracker <a href='/signup>'>Sign up</a> </p>
+                    <p>New to the Budget Tracker <a href='/signup'>Sign up</a> </p>
                 </div>
             </div>
         </div>
     )
     
 }
+
+export default Signin;
