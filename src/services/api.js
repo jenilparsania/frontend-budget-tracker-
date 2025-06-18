@@ -2,7 +2,7 @@ const API_BASE_URL = 'http://localhost:3000';
 
 export const signup = async (userData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/signup`, {
+    const response = await fetch(`${API_BASE_URL}/user/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
