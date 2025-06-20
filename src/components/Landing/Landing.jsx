@@ -2,6 +2,10 @@ import { Link } from 'react-router-dom';
 import './Landing.css';
 
 const Landing = () => {
+  const handleLinkClick = (destination) => {
+    console.log('Link clicked, navigating to:', destination);
+  };
+
   return (
     <div className="landing-container">
       {/* Navigation */}
@@ -23,7 +27,7 @@ const Landing = () => {
                 <Link className="nav-link" to="/">Pricing</Link>
               </li>
               <li className="nav-item">
-                <Link className="btn btn-primary ms-3" to="/signup">Sign Up</Link>
+                <Link className="btn btn-primary ms-3" to="/signup" onClick={() => handleLinkClick('/signup')}>Sign Up</Link>
               </li>
             </ul>
           </div>
@@ -38,8 +42,8 @@ const Landing = () => {
               <h1 className="hero-title">Take Control of Your Finances</h1>
               <p className="hero-description">Track your expenses, set budgets, and achieve your financial goals with our easy-to-use budget tracker. Start your journey to financial freedom today.</p>
               <div className="d-flex gap-3">
-                <Link to="/signup" className="btn btn-primary btn-lg">Get Started</Link>
-                <Link to="/" className="btn btn-outline-primary btn-lg">Learn More</Link>
+                <Link to="/signup" className="btn btn-primary btn-lg" onClick={() => handleLinkClick('/signup')}>Get Started</Link>
+                <Link to="/" className="btn btn-outline-primary btn-lg" onClick={() => handleLinkClick('/')}>Learn More</Link>
               </div>
             </div>
             <div className="col-lg-6">
@@ -94,7 +98,7 @@ const Landing = () => {
         <div className="container text-center">
           <h2 className="mb-4">Ready to Start Your Financial Journey?</h2>
           <p className="hero-description mb-5">Join thousands of users who have already taken control of their finances and achieved their financial goals.</p>
-          <Link to="/signup" className="btn btn-light btn-lg">Sign Up Now</Link>
+          <Link to="/signup" className="btn btn-light btn-lg" onClick={() => handleLinkClick('/signup')}>Sign Up Now</Link>
         </div>
       </div>
 

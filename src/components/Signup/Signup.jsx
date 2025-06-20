@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { signup } from '../../services/api';
 import './Signup.css';
 
@@ -83,7 +83,7 @@ const Signup = () => {
       }
       
       // Show success message or redirect
-      navigate('/login'); // Redirect to login page after successful signup
+      navigate('/signin'); // Redirect to signin page after successful signup
     } catch (error) {
       console.error('Signup error:', error);
       setServerError(error.message || 'Failed to create account. Please try again.');
@@ -160,7 +160,7 @@ const Signup = () => {
         </form>
 
         <div className="signup-footer">
-          <p>Already have an account? <a href="/signin">Sign in</a></p>
+          <p>Already have an account? <Link to="/signin">Sign in</Link></p>
         </div>
       </div>
     </div>

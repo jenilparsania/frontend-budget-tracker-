@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { signin } from '../../services/api';
 import './Signin.css'
 
@@ -118,14 +118,18 @@ const Signin = () => {
                         <div className='error-message submit-error'>{serverError}</div>
                     )}
 
-                    <button> 
+                    <button 
+                        type="submit"
+                        className="signin-button"
+                        disabled={isLoading}
+                    > 
                         {isLoading ? 'Checking Credentials...' : 'Login Account'}
                     </button>
 
                 </form>
 
                 <div className='signin-footer'>
-                    <p>New to the Budget Tracker <a href='/signup'>Sign up</a> </p>
+                    <p>New to the Budget Tracker <Link to='/signup'>Sign up</Link> </p>
                 </div>
             </div>
         </div>
