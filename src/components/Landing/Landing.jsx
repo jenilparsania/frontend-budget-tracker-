@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Photo from '../../../public/generated-image.png'
 import './Landing.css';
 
 const Landing = () => {
@@ -37,8 +38,8 @@ const Landing = () => {
       {/* Hero Section */}
       <div className="hero-section">
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6">
+          <div className="row justify-content-evenly gap-1">
+            <div className="col-lg-5">
               <h1 className="hero-title">Take Control of Your Finances</h1>
               <p className="hero-description">Track your expenses, set budgets, and achieve your financial goals with our easy-to-use budget tracker. Start your journey to financial freedom today.</p>
               <div className="d-flex gap-3">
@@ -46,8 +47,8 @@ const Landing = () => {
                 <Link to="/" className="btn btn-outline-primary btn-lg" onClick={() => handleLinkClick('/')}>Learn More</Link>
               </div>
             </div>
-            <div className="col-lg-6">
-              <img src="https://placehold.co/600x400" alt="Budget Tracker Dashboard" className="img-fluid hero-image" />
+            <div className="col-lg-5">
+              <img src={Photo} alt="Budget Tracker Dashboard" className="hero-image" width={400} height={500}/>
             </div>
           </div>
         </div>
